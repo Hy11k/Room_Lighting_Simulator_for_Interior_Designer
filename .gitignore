@@ -8,4 +8,6 @@ lib64/
 share/
 pyvenv.cfg
 __pycache__/
-.env.directory
+.env
+.directory
+.python-version
