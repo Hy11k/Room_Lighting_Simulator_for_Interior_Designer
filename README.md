@@ -1,41 +1,34 @@
-🏗 Room Lighting Simulator for Interior Designers
-📌 Project Overview
+Room Lighting Simulator for Interior Designers
+About the Project
 
-Room Lighting Simulator is a Python-based engineering tool designed for interior designers and 3D visualizers who want to pre-calculate lighting requirements before rendering in software like 3Ds Max, Revit, or Unreal Engine.
+This project started from a very practical problem.
 
-Instead of manually adjusting lighting in a render scene, this tool calculates:
+As an interior designer and 3D visualizer, I often faced the same situation:
+after rendering a scene, the client says — “It feels too dark.”
 
-Required total lumens
+Instead of adjusting lights randomly inside 3Ds Max or Unreal Engine, I wanted a way to calculate lighting properly before building the full render setup.
+
+So I built this simulator.
+
+Room Lighting Simulator is a Python-based tool that calculates how much light a room actually needs based on real lighting standards. It helps designers make technical decisions before moving to the creative stage.
+
+What It Does
+
+The program calculates:
+
+Total required lumens for the room
 
 Number of light fixtures needed
 
-Optimal grid placement of lights
+Balanced grid placement of lights
 
-2D visualization of the lighting layout
+2D top-view visualization of the layout
 
-It helps designers make data-driven lighting decisions based on real-world lighting standards (Lux values).
+This allows you to start your 3D scene with realistic and mathematically correct lighting values instead of guessing.
 
-🎯 What Problem It Solves
+How It Works
 
-Clients often say:
-
-“The room looks too dark.”
-
-Before modifying the full 3D render setup, this simulator allows designers to:
-
-Calculate scientifically accurate lighting levels
-
-Adjust brightness based on room size
-
-Consider wall reflection coefficients
-
-Select light color temperature (3000K / 4000K / 6000K)
-
-Visualize fixture placement in a structured layout
-
-🧮 Lighting Calculation Formula
-
-The program uses a professional interior lighting estimation formula:
+The simulator uses a simple but professional lighting formula:
 
 Required Lumens = Area × Lux Standard / Reflection Factor
 
@@ -43,95 +36,57 @@ Where:
 
 Area = Length × Width
 
-Lux Standard depends on room type:
+Lux depends on room type (bedroom, living room, office)
 
-Bedroom → 150–300 lux
+Reflection factor represents wall reflectivity (0–1)
 
-Living Room → 200–400 lux
+By adjusting these parameters, you can simulate different lighting conditions and room materials.
 
-Office → 300–500 lux
+Project Structure
 
-Reflection Factor = wall reflectivity coefficient (0–1)
+The program is written in Python using Object-Oriented Programming principles.
 
-🧠 Technical Implementation
+Main components:
 
-The program is built using:
+Room class
 
-math module
+Stores room dimensions
 
-Object-Oriented Programming (OOP)
+Calculates area
+
+Applies lux standards
+
+Calculates total required lumens
+
+Light class
+
+Defines light temperature (3000K / 4000K / 6000K)
+
+Stores lumen output per fixture
+
+Calculates quantity needed
+
+Generates grid placement coordinates
+
+Features
 
 Input validation
 
-Automatic grid generation algorithm
+Automatic lumen calculation
 
-Data visualization with matplotlib
+Automatic light quantity calculation
 
-Core Classes
-🔹 Room
+Balanced grid layout generation
 
-Handles:
+2D visualization using matplotlib
 
-Room dimensions
+Optional PNG export
 
-Area calculation
+Why I Built This
 
-Reflection coefficient
+Lighting is one of the most important parts of interior visualization.
 
-Lux standard application
-
-Total required lumens calculation
-
-🔹 Light
-
-Handles:
-
-Light temperature (3000K / 4000K / 6000K)
-
-Lumen output per fixture
-
-Quantity calculation
-
-Grid placement coordinates
-
-⚙️ Features
-
-✔ User input validation
-✔ Automatic lumen calculation
-✔ Automatic light quantity calculation
-✔ Optimal grid layout generation
-✔ 2D room lighting visualization
-✔ Optional PNG export
-
-📊 Visualization
-
-The program generates a 2D top-view layout using matplotlib:
-
-Room boundaries
-
-Light positions plotted in grid format
-
-Balanced distribution algorithm
-
-Clear visual reference for designers
-
-🚀 Advanced Features (Mid+ Level)
-
-Optional advanced implementations:
-
-Window-based natural light contribution
-
-Shadow zone estimation
-
-Multiple light power options
-
-Cost calculation per fixture
-
-Energy consumption estimation
-
-🎨 Why This Is Useful for Interior Designers
-
-As a 3D visualizer, lighting directly affects:
+It affects:
 
 Mood
 
@@ -139,28 +94,28 @@ Realism
 
 Client perception
 
-Render time efficiency
+Render time
 
-This tool bridges engineering calculations with creative visualization.
+Instead of spending hours adjusting light intensity inside a render engine, I wanted a fast way to define technically correct lighting from the beginning.
 
-Instead of guessing light intensity in 3D software, you start with mathematically correct lighting values.
+This tool connects engineering logic with creative workflow.
 
-🛠 Technologies Used
+Technologies Used
 
 Python 3
 
 matplotlib
 
-Object-Oriented Programming
-
 Mathematical modeling
 
-📌 Future Improvements
+Object-Oriented Programming
 
-GUI version (Tkinter / PyQt)
+Future Plans
 
-Web version (Flask / Streamlit)
+GUI version (Tkinter or PyQt)
 
-Integration with Blender or 3Ds Max export
+Web version (Flask or Streamlit)
 
-Photometric IES profile support
+Integration with 3D software workflows
+
+Support for photometric IES profiles
